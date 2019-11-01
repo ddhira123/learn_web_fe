@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Webpage</title>
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<style type="text/css">
+		.container{
+			margin: 0 auto;
+		}
+		.header{
+			background-color: #eee;
+			min-height: 50px;
+			text-align: center;
+			height: 70px;
+		}
+		.menu ul{
+			margin: 0;
+			padding: 0;
+		}
+		.menu ul li{
+			float: left;
+			display: inline-block;
+			position: relative;
+		}
+		.menu ul li a{
+			padding: 10px 20px;
+			text-decoration: none;
+			font-style: monospace;
+			text-align: center;
+			line-height: 60px;
+			color: black;
+		}
+		.menu ul li:hover ul.submenu{
+			display: block;
+		}
+		ul.submenu {
+			background-color: #eee;
+			border: 1px solid #ccc;
+			text-align: left;
+			position: absolute;
+			top: 70px;
+			left: 0;
+			display: none;
+			z-index: 1;
+		}
+		ul.submenu li{
+			display: block;
+		}
+		ul.submenu li a{
+			display: block;
+			padding: 5px 10px;
+		}
+		.jumbotron{
+			width: 100%;
+			padding: 80px 40px;
+			box-sizing: border-box;
+			text-align: center;
+			color: white;
+			background-color: #aaa;
+			background-image: url(https://images.unsplash.com/photo-1515111293107-b0cd6448f5f6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e4f56141064dbe63db663bb7a2c73b71&auto=format&fit=crop&w=1350&q=80);
+			background-size: cover;
+			position: relative;
+			font-family: 'Mansalva', cursive;
+			text-shadow: 2px 2px 8px #aaa;
+		}
+		.jumbotron h2{
+			position: relative;
+			font-size: 200%;
+		}
+		.jumbotron p {
+		    position: relative;
+		    font-size: 135%;
+		}
+		.overlay {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background-color: black;
+		    opacity: 0.5;
+		}
+		.content{
+			background-color: #ddd;
+			min-height: 500px;
+			overflow: auto;
+		}
+		.thumbnail{
+			background-color: white;
+			text-align: center;
+			padding: 10px;
+			width: 225px;
+			margin: 10px;
+			float: left;
+		}
+		.thumbnail img{
+			width: 100%;
+		}
+		.logo img {
+			width: auto;
+			height: auto;
+			max-height: 50px;
+			max-width: 50px;
+			padding: 0;
+			margin: 0;
+		}
+		.footer{
+			background-color: #ccc;
+			min-height: 50px;
+			padding: 20px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<div class="header">
+		<div class="menu">
+		<ul>
+			<li class="left logo"><img src="https://m.media-amazon.com/images/I/71D4QjQzo6L._SR500,500_.jpg"></li>
+			<li><a href="#">Beranda</a></li>
+			<li><a href="#">Tentang</a>
+				<ul class="submenu">
+					<li><a href="#">Pendidikan</a></li>
+					<li><a href="#">Hobi</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Kontak</a></li>
+		</ul>
+	</div>
+	</div>
+	<div class="jumbotron">
+		<div class="overlay"></div>
+		<h2>Selamat Datang!</h2>
+		<p>Monggo dilihat-lihat lapak saya.</p>
+	</div>
+	<div class="content">
+		<h2>My Articles </h2>
+		<h2>My Products</h2>
+
+		<div class="thumbnail">
+			<img src="https://via.placeholder.com/250x150/">
+			<h2>Produk 1</h2>
+			<p>IDR 250,000</p>
+		</div>
+		<div class="thumbnail">
+			<img src="https://via.placeholder.com/250x150/">
+			<h2>Produk 2</h2>
+			<p>IDR 250,000</p>
+		</div>
+		<div class="thumbnail">
+			<img src="https://via.placeholder.com/250x150/">
+			<h2>Produk 3</h2>
+			<p>IDR 250,000</p>
+		</div>
+		<div class="thumbnail">
+			<img src="https://via.placeholder.com/250x150/">
+			<h2>Produk 4</h2>
+			<p>IDR 250,000</p>
+		</div>
+	</div>
+	<div class="footer">
+		<p>Copyright 2019 My Page</p>
+	</div>
+	</div>
+</body>
+</html>
