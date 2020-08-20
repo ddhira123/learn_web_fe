@@ -1,7 +1,6 @@
 {
   "name": "fetch-practice",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
@@ -25,5 +24,6 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "regenerator-runtime": "^0.13.3"
-  }
+  },
+  "description": ""
 }
