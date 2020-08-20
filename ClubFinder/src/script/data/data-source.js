@@ -8,21 +8,54 @@ class DataSource{
     // }
 
     //The terms below is for using promise
-    static searchClub(keyword){
-        return new Promise((resolve, reject) => {
-            const filteredClubs = clubs.filter(club => {
-                console.log(keyword);
-                return club.name.toUpperCase().includes(keyword.toUpperCase());
-            });
+    // static searchClub(keyword){
+    //     return new Promise((resolve, reject) => {
+    //         const filteredClubs = clubs.filter(club => {
+    //             console.log(keyword);
+    //             return club.name.toUpperCase().includes(keyword.toUpperCase());
+    //         });
 
-            if(filteredClubs.length){
-                resolve(filteredClubs);
+    //         if(filteredClubs.length){
+    //             resolve(filteredClubs);
+    //         }
+    //         else{
+    //             reject(`${keyword} is not found"`);
+    //         }
+    //     });
+    // }
+
+    // If using API:
+    // 1. Promise
+    // static searchClubFromAPI(keyword) {
+    //     return fetch(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${keyword}`)
+    //     .then(response => {
+    //         return response.json();
+    //     })
+    //     .then(responseJson => {
+    //         if(responseJson.teams) {
+    //             return Promise.resolve(responseJson.teams);
+    //         } else {
+    //             return Promise.reject(`${keyword} is not found`);
+    //         }
+    //     })
+    // }
+    // 2. Async/await
+    static async searchClubFromAPI(keyword) {
+        const searchUrl = "https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=";
+        try {
+            const response = await fetch(`${searchUrl}${keyword}`);
+            const responseJson = await response.json();
+            if(responseJson.teams) {
+                return Promise.resolve(responseJson.teams);                
+                // fallbackResult(responseJson.message);
+            } else {
+                return Promise.reject(`${keyword} is not found.`);
             }
-            else{
-                reject(`${keyword} is not found"`);
-            }
-        });
+        } catch (error) {
+            return Promise.reject(error);
+        }
     }
+    
 
     // The terms below for using onSuccess and onFailed
     // searchClub(keyword){

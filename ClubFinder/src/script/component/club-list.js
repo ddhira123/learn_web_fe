@@ -8,7 +8,13 @@ class ClubList extends HTMLElement{
 
     set clubItems(items){
         this._items = items;
+        // try {
+        //     this.render();
+        // } catch (error) {
+        //     console.log(error);
+        // }
         this.render();
+        
     }
 
     render(){
@@ -42,6 +48,7 @@ class ClubList extends HTMLElement{
             const clubItemElement = document.createElement("club-list-item");
             // memanggil fungsi setter clubItem() pada club-list-item.
             clubItemElement.clubItem = item;
+            console.log(clubItemElement);
             this.shadowDOM.appendChild(clubItemElement);
         });
     }

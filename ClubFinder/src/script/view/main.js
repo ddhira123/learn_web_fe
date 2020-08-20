@@ -25,9 +25,10 @@ const main = _ =>{
     // If using async and await style
     const onButtonSearchClicked = async () => {
         try {
-            const result = await DataSource.searchClub(searchElement.inputValue);
+            const result = await DataSource.searchClubFromAPI(searchElement.inputValue);
             renderResult(result);
         } catch (error) {
+            console.log(error);
             fallbackResult(error);
         }
     };

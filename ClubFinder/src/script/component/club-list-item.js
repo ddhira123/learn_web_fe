@@ -50,12 +50,13 @@ class ClubItem extends HTMLElement{
             -webkit-line-clamp: 10; /* number of lines to show */
         }
         </style>
-        <img class="fan-art-club" src="${this._item.fanArt}" alt="Fan Art">
+        <img class="fan-art-club" src="${this._item.strTeamBadge}" alt="Fan Art">
         <div class="club-info">
-        <h2> ${this._item.name} </h2>
-        <p> ${this._item.description} </p>
+        <h2> ${this._item.strTeam} </h2>
+        <p> ${this._item.strDescriptionEN} </p>
         </div>
         `;
+        // console.log(`team: ${this._item.strTeam}\ndesc: ${this._item.strDescriptionEN}\nimgurl: ${this._item.strTeamBadge}`);
     }
 }
 customElements.define("club-list-item", ClubItem);
