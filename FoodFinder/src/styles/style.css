@@ -1,0 +1,65 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+h2 {
+    font-size: 3vw;
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 32px auto;
+}
+
+.jumbotron {
+    padding-top: 10%;
+    padding-bottom: 3%;
+    margin:0px auto;
+    color:floralwhite;
+    overflow: hidden;
+    position: relative;
+    background: none;
+}
+
+.jumbotron-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://source.unsplash.com/1600x900/?%22food%20in%20dark%22);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+     -o-filter: blur(5px);
+     -ms-filter: blur(5px);
+     filter: blur(5px);
+    z-index: -1;
+}
+
+.lead-title {
+    font-size: 1.5vw;
+}
+
+.title-box{
+    margin: 0 auto;
+    width: 60%;
+    margin-bottom: 5vw;
+}
+
+.title {
+    font-family: Sofia;
+    font-size: 7vw;
+}
+.lead-title{
+    font-size: 2vw;
+}
