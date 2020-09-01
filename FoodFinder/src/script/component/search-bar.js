@@ -5,7 +5,11 @@ class SearchBar extends HTMLElement{
     }
 
     connectedCallback(){
+        const styles = document.querySelector('link[href*="fontawesome"]');
         this.render();
+        if (styles) {
+            this.shadowRoot.appendChild(styles.cloneNode());
+        }
     }
 
     set clickEvent(event) {
@@ -19,14 +23,11 @@ class SearchBar extends HTMLElement{
 
     render(){
         this.shadowDOM.innerHTML= `
-        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style>
-        img{
-            width: 2vw;
-            height: 2vw;
-        }
         .search-container {
             max-width: 80%;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -59,7 +60,7 @@ class SearchBar extends HTMLElement{
             font-weight: normal;
         }
         
-        .search-container > button {
+        .btn {
             width: 6vw;
             height: 6vw;
             cursor: pointer;
@@ -67,26 +68,39 @@ class SearchBar extends HTMLElement{
             margin-bottom: auto;
             margin-left: auto;
             background-color: black;
-            color: white;
             border-radius: 50%;
-            text-transform: uppercase;
         }
         
-        @media screen and (max-width: 550px){
+        @media screen and (max-width: 700px){
             .search-container {
                 flex-direction: column;
                 position: static;
             }
         
             .search-container > input {
-                margin-bottom: 12px;
+                margin: auto;
+            }
+            .btn {
+                width: 100%;
+                cursor: pointer;
+                margin: auto;
+                background-color: black;
+                border-radius: 30px;
+            }
+        
+        }
+        @media screen and (min-width: 700px){
+            span{
+                font-size: 1.5vw;
             }
         
         }
         </style>
         <div id="search-container" class="search-container">
-            <input placeholder="Search any meal" id="searchElement" type="search">
-            <button id="searchButtonElement" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/search-13-xxl.png"></button>
+            <input class="form-control" placeholder="Search any meal" id="searchElement" type="search">
+            <button class="btn btn-circle mr-3 d-flex justify-content-center align-items-center" id="searchButtonElement" type="submit">
+                <span style="color: white">search</span>
+            </button>
         </div>
         `;
 
